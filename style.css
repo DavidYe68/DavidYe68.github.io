@@ -1,26 +1,29 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2820
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
-
-\f0\fs24 \cf0 body \{\
-    font-family: Arial, sans-serif;\
-    background-color: #f9f9f9;\
-    color: #333;\
-    text-align: center;\
-\}\
-\
-header \{\
-    background-color: #4CAF50;\
-    color: white;\
-    padding: 20px 0;\
-\}\
-\
-footer \{\
-    margin-top: 20px;\
-    font-size: 14px;\
-    color: #666;\
-\}\
-}
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+  
+  .hero {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+  }
+  
+  .about p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  .research h4 {
+    color: #0056b3;
+    margin-bottom: 10px;
+  }
+  
+  .projects .card {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .projects .card:hover {
+    transform: translateY(-10px);
+  }
+  
