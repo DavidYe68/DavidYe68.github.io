@@ -99,15 +99,13 @@ body {
     gap: 20px;
     padding: 60px 20px;
     background-color: #fff;
-    justify-content: space-between; /* 主轴方向对齐 */
-    align-items: stretch; /* 子元素高度一致 */
+    justify-content: space-evenly; /* Ensure even spacing between cards */
+    align-items: stretch; /* Ensure all cards have the same height */
   }
   
   .projects .card {
-    flex: 1 1 calc(50% - 20px); /* 每个卡片占50%宽度，减去间距 */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* 均匀分布内容 */
+    flex: 0 0 calc(50% - 20px); /* Ensure each card takes exactly 50% width minus the gap */
+    max-width: calc(50% - 20px); /* Prevent cards from exceeding 50% width */
     border: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -120,8 +118,8 @@ body {
   
   .projects .card img {
     border-radius: 8px;
-    width: 100%; /* 图片自适应卡片宽度 */
-    height: auto; /* 图片高度自动 */
+    width: 100%; /* Ensure images fill the card width */
+    height: auto;
   }
   
   .projects .card-title {
@@ -133,7 +131,7 @@ body {
   .projects .card-text {
     font-size: 1rem;
     color: #555;
-    margin-bottom: auto; /* 确保内容在底部对齐 */
+    margin-bottom: auto; /* Ensure text is spaced correctly */
   }
   
   .projects .btn {
@@ -142,7 +140,7 @@ body {
     border-radius: 20px;
     padding: 8px 20px;
     font-size: 1rem;
-    align-self: center; /* 按钮居中对齐 */
+    align-self: center;
   }
   
   .projects .btn:hover {
@@ -160,7 +158,8 @@ body {
     }
   
     .projects .card {
-      flex: 1 1 100%; /* Cards take full width on smaller screens */
+      flex: 1 1 100%; /* Ensure cards stack on smaller screens */
+      max-width: 100%;
     }
   }
   
