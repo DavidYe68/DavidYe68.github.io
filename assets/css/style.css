@@ -1,175 +1,233 @@
-/* General Styles */
+/* General Reset & Typography */
+:root {
+    --bg-color: #fafafa;
+    --text-primary: #2c2c2c;
+    --text-secondary: #666666;
+    --accent-color: #333333; 
+    --link-color: #0056b3;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.8;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f8f9fa;
-    color: #333;
-  }
-  
-  /* Hero Section */
-  .hero {
-    background: linear-gradient(45deg, #007bff, #0056b3);
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  
-  .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-  }
-  
-  .hero a {
-    font-size: 1.2rem;
-    padding: 10px 30px;
-    background-color: #fff;
-    color: #007bff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Georgia", "Times New Roman", serif; 
+    color: #111;
+    font-weight: normal;
+}
+
+a {
+    color: var(--text-primary);
     text-decoration: none;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-  }
-  
-  .hero a:hover {
-    background-color: #0056b3;
-    color: #fff;
-  }
-  
-  /* About Section */
-  .about {
-    padding: 60px 20px;
-    text-align: center;
-  }
-  
-  .about p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: auto;
-    color: #555;
-  }
-  
-  .about a {
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #007bff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .about a:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Study Section */
-  .study {
-    padding: 60px 20px;
-    background-color: #f1f1f1;
-    text-align: center;
-  }
-  
-  .study h4 {
-    color: #0056b3;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-  
-  .study p {
-    font-size: 1.2rem;
-    color: #666;
-    max-width: 600px;
-    margin: auto;
-    margin-bottom: 30px;
-  }
-  
-  /* Projects Section */
-  .projects {
+    transition: all 0.2s ease;
+}
+
+/* Top Right Navigation */
+.top-right-nav {
+    position: absolute;
+    top: 20px;
+    right: 30px;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 20px;
-    padding: 60px 20px;
-    background-color: #fff;
-    justify-content: space-evenly; /* Ensure even spacing between cards */
-    align-items: stretch; /* Ensure all cards have the same height */
-  }
-  
-  .projects .card {
-    flex: 0 0 calc(50% - 20px); /* Ensure each card takes exactly 50% width minus the gap */
-    max-width: calc(50% - 20px); /* Prevent cards from exceeding 50% width */
-    border: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  }
-  
-  .projects .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .projects .card img {
-    border-radius: 8px;
-    width: 100%; /* Ensure images fill the card width */
-    height: auto;
-  }
-  
-  .projects .card-title {
-    font-size: 1.3rem;
-    color: #007bff;
-    margin-bottom: 10px;
-  }
-  
-  .projects .card-text {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: auto; /* Ensure text is spaced correctly */
-  }
-  
-  .projects .btn {
-    background-color: #007bff;
-    color: white;
+    z-index: 1000;
+}
+
+.social-link {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.social-link:hover {
+    color: #000;
+}
+
+.btn-lang {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 5px 15px;
     border-radius: 20px;
-    padding: 8px 20px;
-    font-size: 1rem;
-    align-self: center;
-  }
-  
-  .projects .btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.5rem;
+    font-size: 0.85rem;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-lang:hover {
+    border-color: #999;
+    color: #333;
+}
+
+/* Main Container */
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+/* Header */
+header {
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+h1.name {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Main Menu (The "Columns") */
+.main-menu {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.menu-item {
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 400;
+    position: relative;
+}
+
+.menu-item:hover {
+    color: #000;
+}
+
+.menu-item:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -17px; /* Align with border-bottom */
+    left: 0;
+    background-color: #000;
+    transition: width 0.3s;
+}
+
+.menu-item:hover:after {
+    width: 100%;
+}
+
+/* For Bootstrap pages (curriculum/projects) nav override */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.main-nav .nav-item {
+    color: #555;
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+}
+.main-nav .nav-item.active,
+.main-nav .nav-item:hover {
+    color: #000;
+    border-bottom-color: #000;
+}
+
+/* Intro Text */
+.intro-text {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 40px;
+    max-width: 100%;
+    line-height: 1.8;
+}
+
+/* Sections */
+section {
+    margin-bottom: 60px;
+}
+
+section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Interests Grid */
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.interest-item {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 4px;
+    transition: box-shadow 0.2s ease;
+}
+
+.interest-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.interest-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 500;
+}
+
+.interest-item p {
+    font-size: 0.95rem;
+    color: #777;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    margin-top: 80px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #999;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Utility */
+body.lang-en .zh-text { display: none !important; }
+body.lang-zh .en-text { display: none !important; }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .main-container {
+        padding-top: 60px;
     }
-  
-    .hero p {
-      font-size: 1.2rem;
+    
+    .top-right-nav {
+        top: 15px;
+        right: 15px;
+        gap: 15px;
     }
-  
-    .projects .card {
-      flex: 1 1 100%; /* Ensure cards stack on smaller screens */
-      max-width: 100%;
+
+    h1.name {
+        font-size: 2rem;
     }
-  }
-  
-  @media (max-width: 576px) {
-    .about p {
-      font-size: 1rem;
+    
+    .main-menu {
+        gap: 20px;
     }
-  
-    .study p {
-      font-size: 1rem;
-    }
-  }
-  
+}

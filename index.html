@@ -1,109 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="David Ye's Personal Homepage - Sociology, AI, and HCI">
-  <meta name="author" content="David Ye">
-  <title>David Ye | Personal Homepage</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="David Ye - Sociology & AI Student">
+    <title>David Ye</title>
+    <!-- Custom Minimal CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome for Icons (optional, using CDN) or just text -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
-<body>
-  <!-- 导航栏 -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">David Ye</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
-          <li class="nav-item"><a class="nav-link" href="study.html">Study</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<body class="lang-zh">
 
-  <!-- Hero Section -->
-  <header class="hero bg-primary text-white text-center py-5">
-    <div class="container">
-      <h1 class="display-4">Hi, I'm David Ye</h1>
-      <p class="lead">Sociology Freshman | Minor in AI | Paradox Players (HOI3)</p>
-      <a href="about.html" class="btn btn-outline-light btn-lg mt-3">Learn More About Me</a>
+    <div class="top-right-nav">
+        <a href="mailto:estellelune@outlook.com" class="social-link"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/DavidYe68" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+        <button id="lang-toggle" class="btn-lang">English</button>
     </div>
-  </header>
 
-  <!-- About Section -->
-  <section class="about py-5">
-    <div class="container text-center">
-      <h2 class="mb-4">About Me</h2>
-      <p class="text-muted">I am a freshman majoring in Sociology at Fudan University. My interests concentrate on exploring sociological theories, social computing, and influence of AI on online platforms.</p>
-    </div>
-  </section>
+    <div class="main-container">
+        
+        <header>
+            <h1 class="name">David Ye</h1>
+            <div class="subtitle">
+                <span class="en-text">Sociology & AI / Fudan University</span>
+                <span class="zh-text">社会学 & 人工智能 / 复旦大学</span>
+            </div>
+            
+            <div class="intro-text" id="profile-bio">
+                <!-- Content injected via JS -->
+            </div>
 
-  <!-- Study Interests -->
-  <section class="study bg-light py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Study Interests</h2>
-      <div class="row">
-        <div class="col-md-4 text-center">
-          <h4>Online Communities</h4>
-          <p>Analyzing stratification and power mechanisms in digital platforms.</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <h4>Algorithmic Impact</h4>
-          <p>Exploring how algorithms shape user behavior in digital spaces.</p>
-        </div>
-        <div class="col-md-4 text-center">
-          <h4>Cultural Diffusion</h4>
-          <p>Studying interactions between virtual and real-world cultures.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+            <nav class="main-menu">
+                <a href="curriculum.html" class="menu-item">
+                    <span class="en-text">Curriculum</span>
+                    <span class="zh-text">修读课程</span>
+                </a>
+                <a href="projects.html" class="menu-item">
+                    <span class="en-text">Projects</span>
+                    <span class="zh-text">项目展示</span>
+                </a>
+            </nav>
+        </header>
 
-<!-- Featured Projects -->
-<section class="projects py-5">
-    <div class="container text-center">
-        <h2 class="mb-4">Featured Projects</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">AI-Based Practice</h5>
-                        <p class="card-text">Researching the public attitude to Hospice in China based on AI.</p>
-                        <a href="projects.html" class="btn btn-outline-primary">Learn More</a>
-                    </div>
+        <section id="interests">
+            <h2>
+                <span class="en-text">Research Interests</span>
+                <span class="zh-text">研究兴趣</span>
+            </h2>
+            <div class="interests-grid">
+                <div class="interest-item">
+                    <h3>
+                        <span class="en-text">Social Theory</span>
+                        <span class="zh-text">社会理论</span>
+                    </h3>
+                    <p>
+                        <span class="en-text">Western Marxism & Critical Theory.</span>
+                        <span class="zh-text">西方马克思主义与批判理论。</span>
+                    </p>
+                </div>
+                <div class="interest-item">
+                    <h3>
+                        <span class="en-text">Computational Sociology</span>
+                        <span class="zh-text">计算社会学</span>
+                    </h3>
+                    <p>
+                        <span class="en-text">Bridging theoretical constructs with computational methods.</span>
+                        <span class="zh-text">利用计算方法进行社会研究。</span>
+                    </p>
+                </div>
+                <div class="interest-item">
+                    <h3>
+                        <span class="en-text">AI & Society</span>
+                        <span class="zh-text">人工智能与社会</span>
+                    </h3>
+                    <p>
+                        <span class="en-text">Algorithmic impact and digital culture.</span>
+                        <span class="zh-text">算法影响与数字文化。</span>
+                    </p>
                 </div>
             </div>
-            <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Academic Bootcamp</h5>
-                            <p class="card-text">Researching the Research on Ideological Risk in the Age of Artificial Intelligence.</p>
-                            <a href="projects.html" class="btn btn-outline-primary">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-        </div>
+        </section>
+
+        <footer>
+            <div>&copy; 2025 David Ye</div>
+        </footer>
+
     </div>
-</section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4">
-    <p>&copy; 2025 David Ye. All Rights Reserved.</p>
-    <p>
-      <a href="https://github.com/davidye68" class="text-white me-2">GitHub</a>
-      <a href="https://linkedin.com/in/davidye" class="text-white">LinkedIn</a>
-    </p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
