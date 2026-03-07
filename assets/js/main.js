@@ -1,5 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const langToggleBtn = document.getElementById('lang-toggle');
+    const statusConfig = {
+        completed: {
+            en: 'Completed',
+            zh: '已经修读',
+            badgeClass: 'success',
+            icon: 'bi-check-circle-fill'
+        },
+        in_progress: {
+            en: 'In Progress',
+            zh: '正在修读',
+            badgeClass: 'primary',
+            icon: 'bi-hourglass-split'
+        }
+    };
     
     // Profile Elements (on index.html)
     const profileBio = document.getElementById('profile-bio');
@@ -120,26 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     </tr>
                 </thead>
                 <tbody>
-                    ${section.courses.map(course => {
-                        let statusBadge = '';
-                        if (course.status_zh === '已经修读') {
-                            statusBadge = `<span class="badge bg-success bg-opacity-10 text-success border border-success rounded-pill px-2">
-                                <i class="bi bi-check-circle-fill me-1" style="font-size:0.8em"></i>
-                                <span class="en-text">Completed</span>
-                                <span class="zh-text">已经修读</span>
-                            </span>`;
-                        } else if (course.status_zh === '正在修读') {
-                            statusBadge = `<span class="badge bg-primary bg-opacity-10 text-primary border border-primary rounded-pill px-2">
-                                <i class="bi bi-hourglass-split me-1" style="font-size:0.8em"></i>
-                                <span class="en-text">In Progress</span>
-                                <span class="zh-text">正在修读</span>
-                            </span>`;
-                        } else {
-                            statusBadge = `<span class="text-muted small opacity-50">
-                                <span class="en-text">-</span>
-                                <span class="zh-text">-</span>
-                            </span>`;
-                        }
+                    ${section.courses.map(rawCourse => {
+                        const course = hydrateCourseRecord(rawCourse);
+                        const statusBadge = renderStatusBadge(course.status_code);
 
                         return `
                         <tr>
@@ -212,5 +209,72 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         }
+    }
+
+    function hydrateCourseRecord(course) {
+        const record = getCourseRecord(course);
+        const hasGrade = record && Object.prototype.hasOwnProperty.call(record, 'grade');
+        const hasGpa = record && Object.prototype.hasOwnProperty.call(record, 'gpa');
+        const hasStatus = record && Object.prototype.hasOwnProperty.call(record, 'status');
+        const statusCode = hasStatus ? normalizeStatusCode(record.status) : inferStatusCode(course);
+
+        return {
+            ...course,
+            grade: hasGrade ? record.grade : course.grade,
+            gpa: hasGpa ? record.gpa : course.gpa,
+            status_code: statusCode
+        };
+    }
+
+    function getCourseRecord(course) {
+        if (typeof courseRecords === 'undefined') {
+            return null;
+        }
+
+        return courseRecords[course.zh] || courseRecords[course.en] || null;
+    }
+
+    function inferStatusCode(course) {
+        return normalizeStatusCode(course.status_en || course.status_zh);
+    }
+
+    function normalizeStatusCode(status) {
+        if (!status) {
+            return '';
+        }
+
+        const normalized = String(status).trim().toLowerCase();
+
+        if (normalized === 'completed' || normalized === '已经修读') {
+            return 'completed';
+        }
+
+        if (
+            normalized === 'in progress' ||
+            normalized === 'in_progress' ||
+            normalized === 'in-progress' ||
+            normalized === '正在修读'
+        ) {
+            return 'in_progress';
+        }
+
+        return '';
+    }
+
+    function renderStatusBadge(statusCode) {
+        const status = statusConfig[statusCode];
+
+        if (!status) {
+            return `<span class="text-muted small opacity-50">
+                <span class="en-text">-</span>
+                <span class="zh-text">-</span>
+            </span>`;
+        }
+
+        return `<span class="badge bg-${status.badgeClass} bg-opacity-10 text-${status.badgeClass} border border-${status.badgeClass} rounded-pill px-2">
+            <i class="bi ${status.icon} me-1" style="font-size:0.8em"></i>
+            <span class="en-text">${status.en}</span>
+            <span class="zh-text">${status.zh}</span>
+        </span>`;
     }
 });

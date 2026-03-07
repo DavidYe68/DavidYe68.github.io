@@ -14,6 +14,7 @@ const data = {
     <br><br>
     我也会结合自己的 AI 背景去思考算法、数据和社会结构之间的关系，继续沿着“社会理论 + 技术研究”这条路往下走。我想做的不是单纯跑模型或做统计，而是把技术问题放回社会脉络里去理解。未来也希望能沿着“社会理论 + 技术研究”这条路径研究当代资本主义。`
   },
+  // Course grades and status are maintained in assets/js/course-records.js.
   curriculum: [
     {
       category_en: "Sociology & Social Sciences",

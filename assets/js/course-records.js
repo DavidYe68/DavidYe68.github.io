@@ -1,0 +1,30 @@
+// Update grades, GPA, and course status here instead of editing HTML.
+// Keys can use either the Chinese or English course name.
+const courseRecords = {
+  "社会学导论": { status: "completed", grade: "A-", gpa: "3.729" },
+  "经济学原理": { status: "completed", grade: "A", gpa: "4.0" },
+  "政治学原理": { status: "completed", grade: "A-", gpa: "3.75" },
+  "微观经济学": { status: "completed", grade: "A", gpa: "4.0" },
+  "社会研究方法A": { status: "completed", grade: "A", gpa: "4.0" },
+  "古典社会学理论(荣誉)": { status: "completed", grade: "A", gpa: "4.0"},
+  "西方社会思想史": { status: "completed", grade: "A", gpa: "4.0" },
+  "经济社会学": { status: "completed", grade: "A-", gpa: "3.788" },
+  "文化社会学": { status: "completed", grade: "A", gpa: "4.0" },
+  "高等数学A（上）": { status: "completed", grade: "A", gpa: "4.0" },
+  "高等数学A（下）": { status: "completed", grade: "A", gpa: "4.0" },
+  "线性代数": { status: "completed", grade: "A", gpa: "4.0" },
+  "程序设计": { status: "completed", grade: "A", gpa: "4.0" },
+  "人工智能的编程基础": { status: "completed", grade: "A", gpa: "4.0" },
+  "数据结构": { status: "completed", grade: "A", gpa: "4.0" },
+  "计算机系统基础": { status: "completed", grade: "A-", gpa: "3.785" },
+  "集合与图论": { status: "completed", grade: "A", gpa: "4.0" },
+  "西方马克思主义哲学导论": { status: "completed", grade: "A", gpa: "4.0" },
+  "当代社会学理论": { status: "in_progress" },
+  "质性研究方法": { status: "in_progress" },
+  "人工智能导论": { status: "in_progress" },
+  "人工智能的编程基础": { status: "in_progress" },
+  "人工智能的伦理与治理": { status: "in_progress" },
+  "宗教学导论": { status: "in_progress" },
+  "伦理学基础": { status: "in_progress" },
+  "西方哲学史（上）": { status: "in_progress" }
+};
