@@ -4,7 +4,7 @@ A minimal personal academic website.
 
 ## Structure
 - `index.html`: Main profile page (Bio, Interests, Contact).
-- `curriculum.html`: Private placeholder page for coursework details; no longer linked publicly.
+- `curriculum.html`: Detailed list of courses (linked from homepage).
 - `assets/js/data.js`: Contains all text data (Bio, Courses, Projects) for easy editing.
 - `assets/css/style.css`: Custom minimalist styles.
 

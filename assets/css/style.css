@@ -1,26 +1,18 @@
 /* General Reset & Typography */
 :root {
-    --bg-color: #f3efe8;
-    --surface-color: rgba(255, 252, 247, 0.82);
-    --surface-strong: #fffaf1;
-    --text-primary: #241f19;
-    --text-secondary: #6d6257;
-    --accent-color: #1e3a34;
-    --accent-soft: #dce7df;
-    --border-color: rgba(36, 31, 25, 0.1);
-    --shadow-soft: 0 18px 48px rgba(36, 31, 25, 0.08);
+    --bg-color: #fafafa;
+    --text-primary: #2c2c2c;
+    --text-secondary: #666666;
+    --accent-color: #333333; 
+    --link-color: #0056b3;
 }
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background:
-        radial-gradient(circle at top left, rgba(214, 227, 221, 0.9), transparent 32%),
-        radial-gradient(circle at top right, rgba(235, 214, 184, 0.7), transparent 28%),
-        linear-gradient(180deg, #f7f2ea 0%, #f1ece5 100%);
+    background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.7;
     font-weight: 300;
-    min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,19 +29,13 @@ a {
 
 /* Top Right Navigation */
 .top-right-nav {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 30px;
     display: flex;
     align-items: center;
     gap: 20px;
     z-index: 1000;
-    padding: 10px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 999px;
-    background: rgba(255, 250, 241, 0.78);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(36, 31, 25, 0.08);
 }
 
 .social-link {
@@ -63,7 +49,7 @@ a {
 
 .btn-lang {
     background: none;
-    border: 1px solid rgba(36, 31, 25, 0.15);
+    border: 1px solid #ddd;
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -79,9 +65,9 @@ a {
 
 /* Main Container */
 .main-container {
-    max-width: 920px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 110px 24px 80px;
+    padding: 80px 20px;
 }
 
 /* Header */
@@ -91,7 +77,7 @@ header {
 }
 
 h1.name {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 5px;
     letter-spacing: -0.02em;
 }
@@ -104,30 +90,12 @@ h1.name {
     font-weight: 300;
 }
 
-.hero-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 28px;
-}
-
-.hero-pill {
-    display: inline-flex;
-    align-items: center;
-    padding: 6px 14px;
-    border-radius: 999px;
-    border: 1px solid var(--border-color);
-    background: rgba(255, 250, 241, 0.7);
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-}
-
 /* Main Menu (The "Columns") */
 .main-menu {
     display: flex;
     gap: 40px;
     margin-bottom: 40px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #eee;
     padding-bottom: 15px;
 }
 
@@ -179,15 +147,10 @@ h1.name {
 /* Intro Text */
 .intro-text {
     font-size: 1.1rem;
-    color: #3a332c;
+    color: #444;
     margin-bottom: 40px;
     max-width: 100%;
     line-height: 1.8;
-    padding: 28px 30px;
-    border: 1px solid rgba(36, 31, 25, 0.08);
-    border-radius: 24px;
-    background: var(--surface-color);
-    box-shadow: var(--shadow-soft);
 }
 
 /* Sections */
@@ -198,80 +161,8 @@ section {
 section h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #eee;
     padding-bottom: 10px;
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-}
-
-.section-link {
-    color: var(--accent-color);
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
-.summary-grid {
-    display: grid;
-    grid-template-columns: 1.35fr repeat(3, minmax(0, 1fr));
-    gap: 18px;
-}
-
-.summary-card {
-    padding: 24px;
-    border-radius: 24px;
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-soft);
-}
-
-.summary-card-primary {
-    background: linear-gradient(135deg, rgba(30, 58, 52, 0.95), rgba(61, 94, 87, 0.9));
-    color: #f7f2ea;
-}
-
-.summary-card-primary .summary-label,
-.summary-card-primary .summary-caption,
-.summary-card-primary .summary-note {
-    color: rgba(247, 242, 234, 0.82);
-}
-
-.summary-label {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-secondary);
-}
-
-.summary-value {
-    font-family: "Georgia", "Times New Roman", serif;
-    font-size: 3.4rem;
-    line-height: 1;
-    margin: 14px 0 8px;
-}
-
-.summary-value-small {
-    font-size: 1.7rem;
-    line-height: 1.2;
-}
-
-.summary-caption {
-    font-size: 1rem;
-    color: var(--text-secondary);
-}
-
-.summary-caption-secondary {
-    max-width: 16ch;
-}
-
-.summary-note {
-    margin: 14px 0 0;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
 }
 
 /* Interests Grid */
@@ -282,12 +173,11 @@ section h2 {
 }
 
 .interest-item {
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
+    background: #fff;
+    border: 1px solid #eee;
     padding: 25px;
-    border-radius: 22px;
+    border-radius: 4px;
     transition: box-shadow 0.2s ease;
-    box-shadow: var(--shadow-soft);
 }
 
 .interest-item:hover {
@@ -307,119 +197,11 @@ section h2 {
     margin: 0;
 }
 
-.project-preview-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.project-preview-card,
-.project-card {
-    border-radius: 26px;
-    background: var(--surface-color);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-soft);
-}
-
-.project-preview-card {
-    padding: 26px;
-}
-
-.project-preview-topline,
-.project-period {
-    color: var(--accent-color);
-    letter-spacing: 0.08em;
-    font-size: 0.78rem;
-    font-weight: 600;
-}
-
-.project-preview-card h3 {
-    font-size: 1.45rem;
-    margin: 14px 0 12px;
-}
-
-.project-preview-card p {
-    color: var(--text-secondary);
-    margin-bottom: 18px;
-}
-
-.project-page-intro {
-    max-width: 720px;
-    margin: 0 auto;
-}
-
-.project-card-title {
-    font-size: 1.45rem;
-}
-
-.project-card-text {
-    min-height: 5.2rem;
-}
-
-.project-highlight-list {
-    margin: 1.2rem 0 1.4rem;
-    padding-left: 1.15rem;
-    color: var(--text-primary);
-}
-
-.project-highlight-list li + li {
-    margin-top: 0.65rem;
-}
-
-.tag-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.project-tag {
-    display: inline-flex;
-    align-items: center;
-    padding: 7px 12px;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--accent-color);
-    font-size: 0.86rem;
-    font-weight: 500;
-}
-
-.private-note {
-    max-width: 42rem;
-    margin: 0 auto;
-}
-
-.private-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    padding: 28px;
-    background: var(--surface-color);
-    border-radius: 24px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-soft);
-}
-
-.private-card-icon {
-    display: grid;
-    place-items: center;
-    width: 52px;
-    height: 52px;
-    border-radius: 18px;
-    background: var(--accent-soft);
-    color: var(--accent-color);
-    font-size: 1.35rem;
-    flex: 0 0 auto;
-}
-
-.private-card-title {
-    margin-bottom: 8px;
-}
-
 /* Footer */
 footer {
     margin-top: 80px;
     padding-top: 20px;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid #eee;
     color: #999;
     font-size: 0.9rem;
     text-align: center;
@@ -432,51 +214,20 @@ body.lang-zh .en-text { display: none !important; }
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .main-container {
-        padding-top: 92px;
+        padding-top: 60px;
     }
     
     .top-right-nav {
         top: 15px;
         right: 15px;
         gap: 15px;
-        padding: 8px 12px;
     }
 
     h1.name {
-        font-size: 2.35rem;
+        font-size: 2rem;
     }
     
     .main-menu {
         gap: 20px;
-    }
-
-    .section-header {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .summary-grid,
-    .project-preview-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .intro-text,
-    .summary-card,
-    .project-preview-card,
-    .private-card {
-        padding: 22px;
-        border-radius: 20px;
-    }
-
-    .summary-value {
-        font-size: 2.8rem;
-    }
-
-    .summary-value-small {
-        font-size: 1.45rem;
-    }
-
-    .project-card-text {
-        min-height: 0;
     }
 }

@@ -14,33 +14,6 @@ const data = {
     <br><br>
     我也会结合自己的 AI 背景去思考算法、数据和社会结构之间的关系，继续沿着“社会理论 + 技术研究”这条路往下走。我想做的不是单纯跑模型或做统计，而是把技术问题放回社会脉络里去理解。未来也希望能沿着“社会理论 + 技术研究”这条路径研究当代资本主义。`
   },
-  academic: {
-    term_en: "2025-2026 Fall Semester",
-    term_zh: "2025-2026 学年第一学期",
-    gpa: "3.95",
-    note_en: "Last-semester GPA. Detailed grades are no longer public on this site.",
-    note_zh: "上学期绩点为 3.95，详细成绩已不再公开展示。",
-    metrics: [
-      {
-        value_en: "Double Degree",
-        value_zh: "双学位",
-        label_en: "Sociology + Artificial Intelligence",
-        label_zh: "社会学 + 人工智能"
-      },
-      {
-        value_en: "Theory + Computation",
-        value_zh: "理论 + 计算",
-        label_en: "Long-term research direction",
-        label_zh: "长期研究方向"
-      },
-      {
-        value_en: "Fudan University",
-        value_zh: "复旦大学",
-        label_en: "Academic base",
-        label_zh: "学习与研究基础"
-      }
-    ]
-  },
   curriculum: [
     {
       category_en: "Sociology & Social Sciences",
@@ -109,44 +82,10 @@ const data = {
   ],
   projects: [
     {
-      title_en: "AI Attitude Data Pipeline",
-      title_zh: "AI_attitude 数据流水线",
-      period_en: "Independent project",
-      period_zh: "独立项目",
-      desc_en: "Built a unified pipeline for large-scale AI-related Weibo data: raw CSV discovery, incremental deduplication, preprocessing, stratified sampling, and local-LLM labeling.",
-      desc_zh: "为 AI 相关微博语料搭建统一数据流水线，覆盖原始 CSV 发现、增量去重、文本预处理、分层抽样与本地大模型标注。",
-      highlights_en: [
-        "Full rebuild processed 6,303 raw files and 9.53M rows.",
-        "Produced 8.05M ID-deduplicated rows and 8.04M preprocessed rows.",
-        "Finished 6,000 / 6,000 local labels with structured run reports."
-      ],
-      highlights_zh: [
-        "一次全量重建处理了 6,303 个原始文件、952 万行数据。",
-        "产出 805 万条按 ID 去重数据和 804 万条预处理结果。",
-        "完成 6,000 / 6,000 条本地大模型标注，并保留结构化运行报告。"
-      ],
-      tags_en: ["Python", "Parquet", "Ollama", "LLM Labeling"],
-      tags_zh: ["Python", "Parquet", "Ollama", "本地大模型标注"]
-    },
-    {
-      title_en: "Tangping Discourse Research Pipeline",
-      title_zh: "“躺平”话语研究流水线",
-      period_en: "Research project",
-      period_zh: "研究项目",
-      desc_en: "Adapted the AI_attitude engineering pattern to a Tangping corpus, keeping the same raw/data/state/reports structure for discourse analysis and local classification.",
-      desc_zh: "将 AI_attitude 的工程化结构迁移到“躺平”语料，沿用 raw/data/state/reports 体系，服务于话语分析和本地分类标注。",
-      highlights_en: [
-        "Supports incremental processing from keyword-based raw corpora.",
-        "Separates merged, preprocessed, and text-deduplicated parquet datasets.",
-        "Uses local LLMs to classify whether posts are Tangping-related."
-      ],
-      highlights_zh: [
-        "支持从关键词语料出发的增量式数据处理。",
-        "将合并结果、预处理结果与文本去重结果拆分为独立 parquet 数据集。",
-        "使用本地大模型判断帖子是否“躺平相关”。"
-      ],
-      tags_en: ["Computational Sociology", "Corpus Pipeline", "Local LLM", "Weibo"],
-      tags_zh: ["计算社会学", "语料流水线", "本地大模型", "微博"]
+      title_en: "Computational Sociology Research",
+      title_zh: "计算社会学研究",
+      desc_en: "Exploring social structures through computational methods.",
+      desc_zh: "通过计算方法探索社会结构。"
     }
   ]
 };
