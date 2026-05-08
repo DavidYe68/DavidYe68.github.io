@@ -5,14 +5,16 @@ const data = {
     title_zh: "社会学 + 人工智能 双学位学生",
     university_en: "Fudan University",
     university_zh: "复旦大学",
-    bio_en: `I’m a Sociology and Artificial Intelligence double-degree student at Fudan University. I’ve long been interested in capitalism and the structural tensions of modern society, and most of my regular reading focuses on Marxism—especially Western Marxism.
-    I’ve read works such as <i>The German Ideology</i> and <i>Capital</i> by Marx, as well as key Western Marxist texts like <i>History and Class Consciousness</i>, <i>Dialectic of Enlightenment</i>, and <i>For Marx</i>.
+    bio_en: `I'm a Sociology and Artificial Intelligence double-degree student at Fudan University. I've long been concerned with capitalism and the structural contradictions of modern society. Theoretically, I'm primarily influenced by Western Marxism, especially Lukács and Adorno.
     <br><br>
-    Drawing on my background in AI, I also think a lot about the relationship between algorithms, data, and social structures, and I plan to keep moving forward along this combined path of “social theory + technology studies.” What I want is not just to run models or do statistics, but to situate technological questions within their broader social context. In the future, I hope to use this perspective to study contemporary capitalism in a more systematic way.`,
-    bio_zh: `我是复旦大学社会学 + 人工智能双学位的学生。一直以来，我都对资本主义、现代社会的结构和矛盾特别感兴趣，平日主要阅读马克思主义，尤其是西方马克思主义的相关著作。
-    阅读过包括《德意志意识形态》《资本论》等马克思本人的著作，以及《历史与阶级意识》《启蒙辩证法》《保卫马克思》等西方马克思主义著作。
+    A central question for me is why positivism and scientism have come to dominate today's social sciences. To my mind, scientism and positivism are two sides of the same coin: scientism is an epistemology that tries to reduce the social world to an objective, data-graspable, quasi-natural world; positivism is the methodology that matches it.
     <br><br>
-    我也会结合自己的 AI 背景去思考算法、数据和社会结构之间的关系，继续沿着“社会理论 + 技术研究”这条路往下走。我想做的不是单纯跑模型或做统计，而是把技术问题放回社会脉络里去理解。未来也希望能沿着“社会理论 + 技术研究”这条路径研究当代资本主义。`
+    For me, the AI degree is less about studying society in a more "scientific" way than about understanding what AI means for society. I still believe that any genuine grasp of the social requires restoring a sense of totality, rather than settling for positivist regularities drawn from one empirical fragment or another. It is in this sense that I plan to pursue social theory in continental Europe.`,
+    bio_zh: `我是复旦大学社会学 + 人工智能双学位的学生。一直比较关注资本主义和现代社会的结构性矛盾。理论上主要受西方马克思主义影响，尤其是卢卡奇和阿多诺。
+    <br><br>
+    比较核心的一个问题是实证主义—科学主义为什么在今天的社会科学中占据支配地位。在我看来，科学主义和实证主义是一体两面的：科学主义指向一种认识论，试图把社会世界还原为客观的、可被数据把握的类自然世界；实证主义则是与之相匹配的方法论。
+    <br><br>
+    AI 双学位对我来说，更多不是想用更"科学"的方式去研究社会，而是想理解 AI 对社会意味着什么。我还是相信，如果想对社会有真正的把握，需要恢复总体性的认识，而不是停留在某一个经验局部做实证主义的规律总结。也是在这个意义上，之后打算去欧陆读社会理论。`
   },
   // Course grades and status are maintained in assets/js/course-records.js.
   curriculum: [
