@@ -115,17 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="en-text">Hours/Week</span>
                             <span class="zh-text">周学时</span>
                         </th>
-                        <th scope="col" style="width: 15%;">
+                        <th scope="col" style="width: 20%;">
                             <span class="en-text">Department</span>
                             <span class="zh-text">开课院系</span>
-                        </th>
-                         <th scope="col" class="text-center" style="width: 10%;">
-                            <span class="en-text">Grade</span>
-                            <span class="zh-text">成绩</span>
-                        </th>
-                         <th scope="col" class="text-center" style="width: 10%;">
-                            <span class="en-text">GPA</span>
-                            <span class="zh-text">绩点</span>
                         </th>
                         <th scope="col" style="width: 15%;" class="text-end">
                             <span class="en-text">Status</span>
@@ -153,12 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <span class="en-text">${course.dept_en || '-'}</span>
                                     <span class="zh-text">${course.dept_zh || '-'}</span>
                                 </span>
-                            </td>
-                             <td class="text-center">
-                                ${course.grade ? `<span class="fw-bold">${course.grade}</span>` : '<span class="text-muted">-</span>'}
-                            </td>
-                             <td class="text-center">
-                                ${course.gpa ? `<span class="fw-bold">${course.gpa}</span>` : '<span class="text-muted">-</span>'}
                             </td>
                             <td class="text-end">
                                 ${statusBadge}
