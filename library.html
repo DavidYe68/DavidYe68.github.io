@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | David Ye</title>
+    <title>Library | David Ye</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <style>
+        #library-list .card-title { font-size: 1.2rem; }
+        #library-list .list-group-item { background: transparent; }
+        #library-list .list-group-item:first-child { border-top: none !important; }
+        #library-list .list-group-item .btn { white-space: nowrap; }
+    </style>
 </head>
 <body class="lang-zh bg-light">
 
@@ -26,7 +32,7 @@
                     <span class="en-text">Curriculum</span>
                     <span class="zh-text">修读课程</span>
                 </a>
-                <a href="projects.html" class="nav-item active">
+                <a href="projects.html" class="nav-item">
                     <span class="en-text">Projects</span>
                     <span class="zh-text">项目展示</span>
                 </a>
@@ -34,31 +40,32 @@
                     <span class="en-text">Notes</span>
                     <span class="zh-text">笔记</span>
                 </a>
-                <a href="library.html" class="nav-item">
+                <a href="library.html" class="nav-item active">
                     <span class="en-text">Library</span>
                     <span class="zh-text">资料库</span>
                 </a>
             </nav>
+
+            <h2 class="fw-normal mb-3" style="font-size: 1.75rem;">
+                <span class="en-text">Notes Library</span>
+                <span class="zh-text">笔记资料库</span>
+            </h2>
+            <p class="text-muted">
+                <span class="en-text">Study notes organized by subject, free to download.</span>
+                <span class="zh-text">按学科整理的学习笔记，公开且可下载。</span>
+            </p>
         </header>
 
-        <div class="row justify-content-center">
-            <div class="col-lg-8 text-center">
-                <h2 class="mb-4 text-muted">
-                    <span class="en-text">Under Construction</span>
-                    <span class="zh-text">内容建设中...</span>
-                </h2>
-                <p class="lead text-secondary">
-                    <span class="en-text">Project showcase coming soon.</span>
-                    <span class="zh-text">项目展示板块即将上线。</span>
-                </p>
-                <div class="mt-5">
-                    <a href="index.html" class="text-decoration-none text-secondary">
-                        <i class="bi bi-arrow-left"></i> 
-                        <span class="en-text">Back to Home</span>
-                        <span class="zh-text">返回主页</span>
-                    </a>
-                </div>
-            </div>
+        <div class="row justify-content-center" id="library-list">
+            <!-- Content injected via JS (assets/js/main.js -> renderLibrary) -->
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="index.html" class="text-decoration-none text-secondary">
+                <i class="bi bi-arrow-left"></i>
+                <span class="en-text">Back to Home</span>
+                <span class="zh-text">返回主页</span>
+            </a>
         </div>
     </div>
 
@@ -66,6 +73,7 @@
         &copy; 2025 David Ye
     </footer>
 
+    <script src="assets/js/library-data.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

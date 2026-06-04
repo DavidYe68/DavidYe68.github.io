@@ -23,14 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Projects Elements (on projects.html)
     const projectsContainer = document.getElementById('projects-list');
-    
+
+    // Library Elements (on library.html)
+    const libraryContainer = document.getElementById('library-list');
+
     // Load Content
     if (typeof data !== 'undefined') {
         // Render Bio if element exists
         if (profileBio) {
             renderProfileBio(data.profile);
         }
-        
+
         // Render Curriculum if element exists
         if (curriculumContainer) {
             renderCurriculum(data.curriculum, curriculumContainer);
@@ -40,6 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (projectsContainer) {
             renderProjects(data.projects, projectsContainer);
         }
+    }
+
+    // Render Library if element exists (independent of `data`)
+    if (libraryContainer && typeof libraryData !== 'undefined') {
+        renderLibrary(libraryData, libraryContainer);
     }
 
     // Language Switching
@@ -195,6 +203,130 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
         }
+    }
+
+    function libraryFileIcon(ext) {
+        const map = {
+            pdf: 'bi-filetype-pdf',
+            md: 'bi-filetype-md',
+            markdown: 'bi-filetype-md',
+            doc: 'bi-filetype-docx',
+            docx: 'bi-filetype-docx',
+            ppt: 'bi-filetype-ppt',
+            pptx: 'bi-filetype-ppt',
+            xls: 'bi-filetype-xlsx',
+            xlsx: 'bi-filetype-xlsx',
+            txt: 'bi-filetype-txt',
+            zip: 'bi-file-earmark-zip',
+            png: 'bi-filetype-png',
+            jpg: 'bi-filetype-jpg',
+            jpeg: 'bi-filetype-jpg'
+        };
+        return map[ext] || 'bi-file-earmark';
+    }
+
+    function renderLibrary(collections, container) {
+        // Clear container first
+        container.innerHTML = '';
+
+        // Empty state — mirror renderProjects' placeholder
+        if (!collections || collections.length === 0) {
+            container.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <p class="text-muted">
+                        <span class="en-text">Notes coming soon...</span>
+                        <span class="zh-text">笔记资料整理中...</span>
+                    </p>
+                </div>
+            `;
+            return;
+        }
+
+        collections.forEach(collection => {
+            const col = document.createElement('div');
+            col.className = 'col-lg-10 mb-4';
+
+            const card = document.createElement('div');
+            card.className = 'card shadow-sm border-0';
+
+            const body = document.createElement('div');
+            body.className = 'card-body p-4';
+
+            // Collection header: title (free text -> textContent) + file count
+            const header = document.createElement('div');
+            header.className = 'd-flex align-items-baseline justify-content-between mb-3';
+
+            const title = document.createElement('h5');
+            title.className = 'card-title fw-bold mb-0';
+            const titleIcon = document.createElement('i');
+            titleIcon.className = 'bi bi-folder2-open text-secondary me-2';
+            title.appendChild(titleIcon);
+            title.appendChild(document.createTextNode(collection.name));
+
+            const count = document.createElement('span');
+            count.className = 'text-muted small flex-shrink-0 ms-3';
+            const n = collection.files.length;
+            count.textContent = `${n} ${n === 1 ? 'file' : 'files'}`;
+
+            header.appendChild(title);
+            header.appendChild(count);
+            body.appendChild(header);
+
+            // Optional description (free text -> textContent)
+            if (collection.desc) {
+                const desc = document.createElement('p');
+                desc.className = 'text-muted small mb-3';
+                desc.textContent = collection.desc;
+                body.appendChild(desc);
+            }
+
+            // File list
+            const list = document.createElement('div');
+            list.className = 'list-group list-group-flush';
+
+            collection.files.forEach(file => {
+                const row = document.createElement('div');
+                row.className = 'list-group-item d-flex align-items-center px-0 py-2 border-0 border-top';
+
+                const icon = document.createElement('i');
+                icon.className = `bi ${libraryFileIcon(file.ext)} fs-5 text-secondary me-3`;
+                row.appendChild(icon);
+
+                const nameWrap = document.createElement('div');
+                nameWrap.className = 'flex-grow-1 text-truncate me-3';
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = file.name; // free text -> safe
+                nameWrap.appendChild(nameSpan);
+                if (file.sizeLabel) {
+                    const sizeSpan = document.createElement('span');
+                    sizeSpan.className = 'text-muted small ms-2';
+                    sizeSpan.textContent = file.sizeLabel;
+                    nameWrap.appendChild(sizeSpan);
+                }
+                row.appendChild(nameWrap);
+
+                // Download / open link. `download` is best-effort: same-origin
+                // GitHub Pages usually saves directly, but some browsers (esp.
+                // mobile Safari) may still preview PDFs — hence "Download / Open".
+                const link = document.createElement('a');
+                link.href = file.path; // already per-segment encoded by build script
+                link.className = 'btn btn-outline-primary btn-sm flex-shrink-0';
+                link.setAttribute('download', '');
+                link.innerHTML = `
+                    <i class="bi bi-download me-1"></i>
+                    <span class="en-text">Download</span>
+                    <span class="zh-text">下载</span>
+                `;
+                row.appendChild(link);
+
+                list.appendChild(row);
+            });
+
+            body.appendChild(list);
+            card.appendChild(body);
+            col.appendChild(card);
+            container.appendChild(col);
+        });
     }
 
     function hydrateCourseRecord(course) {
